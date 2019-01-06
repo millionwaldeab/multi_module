@@ -3,11 +3,14 @@ package com.example.theex.multiplemodulesapplicationsample.Components;
 import com.example.theex.multiplemodulesapplicationsample.Components.CustomDesign.CarBrandWindow;
 import com.example.theex.multiplemodulesapplicationsample.dimensions.Design;
 
+import javax.inject.Inject;
+
 public class CarWindow {
     String name;
     Design design;
     CarBrandWindow brandWindow;
 
+    @Inject
     public CarWindow(String name, Design design, CarBrandWindow brandWindow) {
         this.name = name;
         this.design = design;

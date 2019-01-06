@@ -1,9 +1,12 @@
 package com.example.theex.multiplemodulesapplicationsample.Components;
 
+import javax.inject.Inject;
+
 public class Chassi {
     String name;
     int size;
 
+    @Inject
     public Chassi(String name, int size) {
         this.name = name;
         this.size = size;

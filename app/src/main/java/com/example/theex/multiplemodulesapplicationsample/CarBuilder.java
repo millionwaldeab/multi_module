@@ -27,7 +27,7 @@ public class CarBuilder {
     private Light mLight;
     private Wheel mWheel;
 
-    //@Inject
+    @Inject
     public CarBuilder(Tire tire, CarWindow window, CustomEngine engine, Chassi chassi, Sterio sterio,
                        Light light, Wheel wheel){
     this.mTire = tire;
@@ -53,5 +53,4 @@ public class CarBuilder {
         mLight.getName();
         mWheel.getName();
     }
-
 }

@@ -1,8 +1,11 @@
 package com.example.theex.multiplemodulesapplicationsample.Components;
 
+import javax.inject.Inject;
+
 public class Sterio {
     String name;
 
+    @Inject
     public Sterio(String name, int cdamount, boolean hasCassette, boolean isTouchScreen,
                   boolean supportAndroidAuto, boolean supportsAppleAuto) {
         this.name = name;

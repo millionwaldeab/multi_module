@@ -1,7 +1,6 @@
 package com.example.theex.multiplemodulesapplicationsample.Components.CustomDesign;
 
 import android.util.Log;
-
 import dagger.Module;
 import dagger.Provides;
 

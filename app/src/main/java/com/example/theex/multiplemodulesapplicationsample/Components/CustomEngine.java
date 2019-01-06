@@ -1,10 +1,13 @@
 package com.example.theex.multiplemodulesapplicationsample.Components;
 
+import javax.inject.Inject;
+
 public class CustomEngine {
     String name;
     int size;
     enum type{};
 
+    @Inject
     public CustomEngine(String name, int size) {
         this.name = name;
         this.size = size;
