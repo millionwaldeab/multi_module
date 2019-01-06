@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.theex.multiplemodulesapplicationsample.Components.CustomDesign.CarBrandWindow;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity
 
     FloatingActionButton fab;
     TextView mHelloText;
+    private CarFactoryComponent carFactoryComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,12 @@ public class MainActivity extends AppCompatActivity
 
         mHelloText = findViewById(R.id.tvHelloText);
         changeFabText();
+
+        carFactoryComponent = DaggerCarFactoryComponent
+                .builder()
+                .build();
+
+        carFactoryComponent.makeCars(this);
     }
 
     private void changeFabText() {
@@ -122,8 +130,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Singleton
-    @Component(modules=CarBrandWindow.class)
-    public interface CarFactory{
-        CarBuilder makeCars();
+    @Component()
+    public interface CarFactoryComponent{
+        void makeCars(MainActivity main);
     }
 }

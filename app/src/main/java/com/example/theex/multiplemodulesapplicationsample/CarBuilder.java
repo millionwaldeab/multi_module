@@ -19,13 +19,13 @@ architecture clean by making the activity do stuff related to views only.
 ***/
 
 public class CarBuilder {
-    private Tire mTire;
-    private CarWindow mWindow;
-    private CustomEngine mEngine;
-    private Chassi mChassi;
-    private Sterio mSterio;
-    private Light mLight;
-    private Wheel mWheel;
+    @Inject Tire mTire;
+    @Inject CarWindow mWindow;
+    @Inject CustomEngine mEngine;
+    @Inject Chassi mChassi;
+    @Inject Sterio mSterio;
+    @Inject Light mLight;
+    @Inject Wheel mWheel;
 
     @Inject
     public CarBuilder(Tire tire, CarWindow window, CustomEngine engine, Chassi chassi, Sterio sterio,
