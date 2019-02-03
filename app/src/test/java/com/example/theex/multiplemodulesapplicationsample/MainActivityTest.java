@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
@@ -14,6 +16,8 @@ import org.robolectric.annotation.Config;
 @Config(sdk=Build.VERSION_CODES.LOLLIPOP) //add this if the test will include Lollipop
 public class MainActivityTest {
     private MainActivity mMainActivity;
+    @Mock
+    CarBuilder mCarBuilder;
 
     @Before
     public void setUp(){
@@ -31,5 +35,11 @@ public class MainActivityTest {
     public void testFabClick(){
         mMainActivity.fab.performClick();
         assert(mMainActivity.mHelloText.getText()).equals("Hey y'all");
+    }
+
+    @Test
+    public void testMakeCar(){
+
+        //Mockito.spy()
     }
 }

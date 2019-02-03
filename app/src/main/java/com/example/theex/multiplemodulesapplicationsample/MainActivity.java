@@ -24,6 +24,8 @@ import javax.inject.Singleton;
 import dagger.Component;
 import dagger.Module;
 
+import static com.example.theex.multiplemodulesapplicationsample.DaggerMainActivity_CarFactoryComponent.builder;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -61,11 +63,12 @@ public class MainActivity extends AppCompatActivity
         mHelloText = findViewById(R.id.tvHelloText);
         changeFabText();
 
-        carFactoryComponent = DaggerCarFactoryComponent
+        carFactoryComponent =
+        carFactoryComponent = DaggerMainActivity_CarFactoryComponent
                 .builder()
                 .build();
 
-        carFactoryComponent.makeCars(this);
+        carFactoryComponent.inject(this);
     }
 
     private void changeFabText() {
@@ -129,9 +132,13 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    /**
+     * This is for the purpose of this example only. In real world production code this should be in a
+     * seperate dagger only package in the presentation layer for readability reasons.
+     */
     @Singleton
     @Component()
     public interface CarFactoryComponent{
-        void makeCars(MainActivity main);
+        void inject(MainActivity main);
     }
 }
