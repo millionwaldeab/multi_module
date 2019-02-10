@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity
         mHelloText = findViewById(R.id.tvHelloText);
         changeFabText();
 
-        carFactoryComponent =
         carFactoryComponent = DaggerMainActivity_CarFactoryComponent
                 .builder()
                 .build();
