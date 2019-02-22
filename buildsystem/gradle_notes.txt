@@ -1,7 +1,1 @@
-Here in this directory they have general project wide gradle files called
-coverage.gradle and libraries.gradle for test coverage including
-reports and specifications, and libraries respectively.
 
-
-They also have other folders in app/src for base url and flavor settings. Some have raw folder
-(in a res folder) full of .pem files for public key and other key stuff.
